@@ -3,3 +3,139 @@
 *::after {
   box-sizing: border-box;
 }
+
+:root {
+  --bg: #f5f2ec;
+  --text: #1c1c1c;
+  --muted: #6b6b6b;
+  --accent: #8a5a44;
+  --max-width: 1200px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header,
+main,
+.site-footer {
+  width: min(100% - 64px, var(--max-width));
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 0 24px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.8rem;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.logo__strong {
+  font-weight: 600;
+}
+
+.logo__light {
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+nav a {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.hero {
+  min-height: 28vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 32px;
+}
+
+.hero__intro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.gallery-section {
+  padding-bottom: 80px;
+}
+
+.gallery-section h2 {
+  margin: 0 0 32px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 768px) {
+  .site-header,
+  main,
+  .site-footer {
+    width: min(100% - 64px, var(--max-width));
+  }
+
+  .site-header {
+    align-items: center;
+    padding: 48px 0 24px;
+  }
+
+  .logo {
+    font-size: clamp(3rem, 6vw, 5rem);
+  }
+
+  nav {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .hero {
+    min-height: 38vh;
+    padding-bottom: 48px;
+  }
+}
